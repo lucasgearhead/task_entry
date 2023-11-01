@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin: 0 auto;
 }
 
 .wall {
@@ -19,6 +20,7 @@
 
 .cards {
   gap: 5px;
+  
 }
 
 .card {
@@ -31,6 +33,7 @@
   padding: 2%;
   font-size: 30px;
   text-align: left;
+
 }
 
 .row {
@@ -48,15 +51,19 @@
   height: 70px;
   width: 100px;
   border-radius: 1em;
-  background-color: #a90000;
-  color: white;
+  background-color: #171717;
+  color: WHITE;
   text-align: center;
   align-items: center;
   justify-content: center;
+  user-select: none;
+  box-shadow: 2px 2px 5px black;
+  transition: 0.15s;
 }
 
 .button:hover {
   cursor: pointer;
+  box-shadow: 1px 1px 2px black;
 }
 
 .fixed {
@@ -74,4 +81,41 @@
 
 .gap{
     gap: 5px;
+}
+
+.buttons{
+  background-color: #565656;
+  padding: 1%;
+  border-radius: 0.5em;
+}
+
+.transition{
+  transition: 0.5s;
+}
+
+.navigation{
+  height: auto;
+  width: 10vw;
+  margin: 1%;
+  padding: 0.5%;
+  border-radius: 0.5em;
+  background-color: #565656;
+  color: white;
+  text-decoration: none;
+  position: fixed;
+  left: 1%;
+  top: 50%;
+}
+
+.aside{
+  width: 20vw;
+  background-color: #dbdbdb;
+}
+
+.between{
+  justify-content: space-between;
+}
+
+.around{
+  justify-content: space-around;
 }

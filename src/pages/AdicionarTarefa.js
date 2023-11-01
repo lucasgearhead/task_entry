@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 const AdicionarTarefa = () => {
   const [nome, setNome] = useState("");
@@ -14,9 +13,8 @@ const AdicionarTarefa = () => {
   };
 
   return (
-    <div>
+    <>
       <div>
-        <h2>Adicionar Tarefa</h2>
         <p>Nome:</p>
         <input
           type="text"
@@ -32,12 +30,7 @@ const AdicionarTarefa = () => {
         />
       </div>
       <button onClick={handleAdicionar}>Adicionar</button>
-      <div>
-        <Link to={"/tarefas"}>
-          <button>Visualizar tarefas</button>
-        </Link>
-      </div>
-    </div>
+    </>
   );
 };
 

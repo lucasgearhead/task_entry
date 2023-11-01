@@ -1,16 +1,19 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AdicionarTarefa from "./pages/AdicionarTarefa";
 import VisualizarTarefas from "./pages/VisualizarTarefas";
 import "./Global.css";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<AdicionarTarefa />} />
-        <Route path="/tarefas" element={<VisualizarTarefas />} />
-      </Routes>
-    </Router>
+    <div className="wall row">
+      <div className="aside">
+        <h1 className="center title">Adicionar Tarefa</h1>
+        <AdicionarTarefa />
+      </div>
+      <div className="column center">
+        <h1 className="center title">Tarefas</h1>
+        <VisualizarTarefas />
+      </div>
+    </div>
   );
 }
 

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "../Global.css";
 
 const VisualizarTarefas = () => {
@@ -8,7 +7,7 @@ const VisualizarTarefas = () => {
   useEffect(() => {
     const storedTarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
     setTarefas(storedTarefas);
-  }, []);
+  }, [tarefas]);
 
   const handleDeletar = (index) => {
     const updatedTarefas = [...tarefas];
@@ -25,21 +24,23 @@ const VisualizarTarefas = () => {
   };
 
   return (
-    <div className="wall">
-      <h1 className="center title">Visualizar Tarefas</h1>
-      <div className="cards center column">
-        {tarefas.map((tarefa, index) => (
-          <div key={index} className="row gap">
-            <div className="card column">
-              <p>
-                <b>{tarefa.nome}</b>
-              </p>
-              <p>{tarefa.descricao}</p>
-            </div>
+    <div className="cards center column">
+      {tarefas.map((tarefa, index) => (
+        <div key={index} className="row gap">
+          <div className="card column">
+            <p>
+              <b>{tarefa.nome}</b>
+            </p>
+            <p>{tarefa.descricao}</p>
+          </div>
+          <div className="column buttons gap">
             <div
               onClick={() => handleConcluir(index)}
               className="button"
-              style={{ backgroundColor: tarefa.concluida ? "green" : "red" }}
+              onSelect={false}
+              style={{
+                backgroundColor: tarefa.concluida ? "green" : "red",
+              }}
             >
               Feito
             </div>
@@ -47,11 +48,8 @@ const VisualizarTarefas = () => {
               Deletar
             </div>
           </div>
-        ))}
-      </div>
-      <Link to={`/`}>
-        <div className="fixed">Adicionar nova tarefa</div>
-      </Link>
+        </div>
+      ))}
     </div>
   );
 };
