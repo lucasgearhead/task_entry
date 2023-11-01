@@ -6,7 +6,6 @@ import "./Global.css";
 function App() {
   const [tasks, setTasks] = useState([]);
 
-  // Carregar tarefas do localStorage
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem("tasks"));
     if (storedTasks) {
@@ -14,7 +13,6 @@ function App() {
     }
   }, []);
 
-  // Atualizar o localStorage sempre que as tarefas mudarem
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
@@ -43,7 +41,11 @@ function App() {
       </div>
       <div className="content column auto">
         <h1 className="center title">Tarefas</h1>
-        <TaskList tasks={tasks} deleteTask={deleteTask} toggleComplete={toggleComplete} />
+        <TaskList
+          tasks={tasks}
+          deleteTask={deleteTask}
+          toggleComplete={toggleComplete}
+        />
       </div>
     </div>
   );

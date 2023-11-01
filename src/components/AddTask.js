@@ -1,32 +1,15 @@
 import React, { useState } from "react";
 import "./style/add.css";
 
-/*
-const AdicionarTarefa = ({ addTask }) => {
-  const [nome, setNome] = useState("");
-  const [descricao, setDescricao] = useState("");
-
-  const handleAdicionar = () => {
-    const novaTarefa = { nome, descricao, concluida: false };
-
-    let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
-    tarefas.push(novaTarefa);
-    localStorage.setItem("tarefas", JSON.stringify(tarefas));
-
-    setNome("");
-    setDescricao("");
-  };
-*/
-
 const AddTask = ({ addTask }) => {
-  const [task, setTask] = useState('');
-  const [description, setDescription] = useState('');
+  const [task, setTask] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleAddTask = () => {
-    if (task !== '') {
+    if (task !== "") {
       addTask({ task, description, completed: false });
-      setTask('');
-      setDescription('');
+      setTask("");
+      setDescription("");
     }
   };
 
