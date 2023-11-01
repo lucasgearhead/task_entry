@@ -1,0 +1,47 @@
+.cards {
+  gap: 5px;
+}
+
+.card {
+  color: black;
+  background-color: #dbdbdb;
+  width: 60vw;
+  justify-content: space-between;
+  min-height: 7vh;
+  border-radius: 0.5rem;
+  padding: 2%;
+  font-size: 30px;
+  text-align: left;
+}
+
+.buttons {
+  background-color: #565656;
+  padding: 1%;
+  border-radius: 0.5em;
+}
+
+.button {
+  display: flex;
+  height: 70px;
+  width: 100px;
+  border-radius: 1em;
+  background-color: #171717;
+  color: WHITE;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  box-shadow: 2px 2px 5px black;
+  transition: 0.15s;
+}
+
+.button:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 2px black;
+}
+
+.content {
+  padding-left: 20vw;
+  padding-bottom: 20vh;
+  min-height: 100vh;
+}

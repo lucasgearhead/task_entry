@@ -1,0 +1,11 @@
+.aside {
+  height: 100vh;
+  width: 20vw;
+  background-color: #dbdbdb;
+  position: fixed;
+}
+
+.titleAside {
+  height: 20vh;
+  color: black;
+}
