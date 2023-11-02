@@ -1,5 +1,5 @@
 .content {
-  padding-left: 20vw;
+  padding-left: 16vw;
   padding-bottom: 20vh;
   min-height: 100vh;
 }
@@ -14,15 +14,22 @@
 }
 
 .card {
-  color: black;
   background-color: #c5c5c5;
-  width: 60vw;
-  justify-content: space-between;
+  color: black;
+  min-width: 60vw;
+  max-width: 60vw;
   min-height: 7vh;
+  justify-content: space-between;
   border-radius: 0.5rem;
   padding: 2%;
   font-size: 30px;
   text-align: left;
+}
+
+.card p{
+  word-wrap: break-word;
+  max-height: 15vh;
+  overflow-y: auto;
 }
 
 .buttons {
