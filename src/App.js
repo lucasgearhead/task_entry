@@ -3,7 +3,7 @@ import AddTask from "./components/AddTask";
 import TaskList from "./components/TaskList";
 import "./Global.css";
 
-function App() {
+const App = () => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
@@ -14,7 +14,9 @@ function App() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    setTimeout(() => {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }, 0);
   }, [tasks]);
 
   const addTask = (newTask) => {
@@ -22,25 +24,25 @@ function App() {
   };
 
   const deleteTask = (index) => {
-    const updatedTasks = [...tasks];
-    updatedTasks.splice(index, 1);
+    const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
   };
 
   const toggleComplete = (index) => {
-    const updatedTasks = [...tasks];
-    updatedTasks[index].completed = !updatedTasks[index].completed;
+    const updatedTasks = tasks.map((task, i) =>
+      i === index ? { ...task, completed: !task.completed } : task
+    );
     setTasks(updatedTasks);
   };
 
   return (
     <div className="wall row">
       <div className="aside">
-        <h1 className="titleAside center">Adicionar Tarefa</h1>
+        <h1 className="center titleAside">Adicionar Tarefa</h1>
         <AddTask addTask={addTask} />
       </div>
       <div className="content column auto">
-        <h1 className="center title">Tarefas</h1>
+        <h1 className="center titleContent">Tarefas</h1>
         <TaskList
           tasks={tasks}
           deleteTask={deleteTask}
@@ -49,6 +51,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;

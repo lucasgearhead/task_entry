@@ -1,10 +1,21 @@
+.content {
+  padding-left: 20vw;
+  padding-bottom: 20vh;
+  min-height: 100vh;
+}
+
+.titleContent {
+  height: 20vh;
+  color: white;
+}
+
 .cards {
   gap: 5px;
 }
 
 .card {
   color: black;
-  background-color: #dbdbdb;
+  background-color: #c5c5c5;
   width: 60vw;
   justify-content: space-between;
   min-height: 7vh;
@@ -38,10 +49,4 @@
 .button:hover {
   cursor: pointer;
   box-shadow: 1px 1px 2px black;
-}
-
-.content {
-  padding-left: 20vw;
-  padding-bottom: 20vh;
-  min-height: 100vh;
 }
