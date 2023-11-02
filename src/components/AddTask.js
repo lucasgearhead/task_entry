@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./style/add.css";
+import Image from "../logoTodo.png"
 
 const AddTask = ({ addTask }) => {
   const [task, setTask] = useState("");
@@ -14,24 +15,28 @@ const AddTask = ({ addTask }) => {
   };
 
   return (
-    <div className="center column">
-      <div>
-        <p>Nome:</p>
-        <input
-          type="text"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-        />
+    <div className="center column gap">
+      <div className="inputs">
+        <div>
+          <p className="">Nome:</p>
+          <input
+            type="text"
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+          />
+        </div>
+        <div>
+          <p>Descrição:</p>
+          <textarea className="description"
+            type=""
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+          <></>
+        </div>
       </div>
-      <div>
-        <p>Descrição:</p>
-        <input
-          type="text"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-      </div>
-      <button onClick={handleAddTask}>Adicionar</button>
+      <button className="buttonAdd" onClick={handleAddTask}>Adicionar</button>
+      <img src={Image} className="image"/>
     </div>
   );
 };
