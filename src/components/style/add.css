@@ -10,20 +10,21 @@
   color: black;
 }
 
-.left{
+.left {
   text-align: left;
   align-items: left;
   text-shadow: #dbdbdb;
 }
 
-.inputs{
+.inputs {
   text-align: left;
   font-size: 1.5em;
   font-weight: 500;
   width: 15vw;
 }
 
-input, textarea{
+input,
+textarea {
   width: 95%;
   height: 5vh;
   border-radius: 0.5em;
@@ -34,7 +35,7 @@ input, textarea{
   resize: vertical;
 }
 
-.buttonAdd{
+.buttonAdd {
   height: 5vh;
   width: auto;
   padding: 0% 2% 0% 2%;
@@ -43,14 +44,13 @@ input, textarea{
   color: white;
   background-color: #363636;
   border-radius: 0.5em;
-
 }
 
-.description{
+.description {
   height: 10vh;
 }
 
-.image{
+.image {
   position: absolute;
   bottom: 5%;
   width: 10vw;

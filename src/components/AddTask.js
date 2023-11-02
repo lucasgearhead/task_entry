@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./style/add.css";
-import Image from "../logoTodo.png"
+import Image from "../logoTodo.png";
 
 const AddTask = ({ addTask }) => {
   const [task, setTask] = useState("");
@@ -27,7 +27,8 @@ const AddTask = ({ addTask }) => {
         </div>
         <div>
           <p>Descrição:</p>
-          <textarea className="description"
+          <textarea
+            className="description"
             type=""
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -35,8 +36,10 @@ const AddTask = ({ addTask }) => {
           <></>
         </div>
       </div>
-      <button className="buttonAdd" onClick={handleAddTask}>Adicionar</button>
-      <img src={Image} className="image"/>
+      <button className="buttonAdd" onClick={handleAddTask}>
+        Adicionar
+      </button>
+      <img src={Image} className="image" />
     </div>
   );
 };
