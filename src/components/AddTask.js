@@ -2,10 +2,20 @@ import React, { useState } from "react";
 import "./style/add.css";
 import Image from "../logoTodo.png";
 
+/**
+ * Componente responsável por adicionar uma nova tarefa à lista.
+ *
+ * Props:
+ * - addTask: Função para adicionar uma nova tarefa à lista.
+ */
 const AddTask = ({ addTask }) => {
-  const [task, setTask] = useState("");
-  const [description, setDescription] = useState("");
+  const [task, setTask] = useState(""); // Estado para armazenar o nome da tarefa
+  const [description, setDescription] = useState(""); // Estado para armazenar a descrição da tarefa
 
+  /**
+   * Manipula o evento de adicionar tarefa à lista.
+   * Verifica se a tarefa não está vazia antes de adicionar.
+   */
   const handleAddTask = () => {
     if (task !== "") {
       addTask({ task, description, completed: false });
@@ -29,11 +39,9 @@ const AddTask = ({ addTask }) => {
           <p>Descrição:</p>
           <textarea
             className="description"
-            type=""
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
-          <></>
         </div>
       </div>
       <button className="buttonAdd" onClick={handleAddTask}>

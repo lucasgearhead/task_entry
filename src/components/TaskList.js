@@ -1,5 +1,13 @@
 import "./style/view.css";
 
+/**
+ * Componente responsável por exibir uma lista de tarefas.
+ *
+ * Props:
+ * - tasks: Array contendo as tarefas a serem exibidas.
+ * - deleteTask: Função para excluir uma tarefa da lista.
+ * - toggleComplete: Função para alternar o status de conclusão de uma tarefa.
+ */
 const TaskList = ({ tasks, deleteTask, toggleComplete }) => {
   return (
     <div className="cards center column">
@@ -19,7 +27,7 @@ const TaskList = ({ tasks, deleteTask, toggleComplete }) => {
                 backgroundColor: task.completed ? "green" : "red",
               }}
             >
-              Feito
+              {task.completed ? "Desfazer" : "Feito"}
             </div>
             <div onClick={() => deleteTask(index)} className="button">
               Deletar
